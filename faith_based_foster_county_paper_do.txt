@@ -1,0 +1,313 @@
+*New Do File for Foster Care Adoption Analysis (Jan 2024)
+*Begin by cleaning the foster care files the same as the previous dataset. This means you should be starting with the following file:
+*Foster Care Cleaning and Merging File. Note that this should be completed after the data are downloaded and saved as described in the README file. If you have not become familiar with the contents of the README file and the nature of the data, please read that before executing this do file.
+clear
+cd C:\Users\bearley2\Desktop
+*Call the data
+*Sort data based on merging criteria (this is a unique identifier for each child, the county fips code, and the year of reporting). Because the capitalization of recnumbr is inconsistent between years, you will notice the need to rename at times.
+*You will repeat this same process and begin merging all the county level data from each year. Note that this will add up to a lot of memory and a fair amount of time to complete (depending on your machine and internet connection).
+use fc2000v5.dta
+sort RecNumbr fipscode repdatyr
+save "C:\Users\bearley2\Desktop\fostercare_main.dta", replace
+use FC2001v5.dta
+sort RecNumbr fipscode repdatyr
+merge RecNumbr fipscode repdatyr using "C:\Users\bearley2\Desktop\fc2000v5.dta"
+drop _merge
+rename RecNumbr recnumbr
+sort recnumbr fipscode repdatyr
+save "C:\Users\bearley2\Desktop\fostercare_main.dta", replace
+use FC2002v8.dta
+sort recnumbr fipscode repdatyr
+merge recnumbr fipscode repdatyr using "C:\Users\bearley2\Desktop\fostercare_main.dta"
+drop _merge
+rename recnumbr RecNumbr
+sort RecNumbr fipscode repdatyr
+save "C:\Users\bearley2\Desktop\fostercare_main.dta", replace
+use FC2003v7.dta
+sort RecNumbr fipscode repdatyr
+merge RecNumbr fipscode repdatyr using "C:\Users\bearley2\Desktop\fostercare_main.dta"
+drop _merge
+rename RecNumbr recnumbr
+sort recnumbr fipscode repdatyr
+save "C:\Users\bearley2\Desktop\fostercare_main.dta", replace
+use FC2004v6.dta
+sort recnumbr fipscode repdatyr
+merge recnumbr fipscode repdatyr using "C:\Users\bearley2\Desktop\fostercare_main.dta"
+drop _merge
+sort recnumbr fipscode repdatyr
+save "C:\Users\bearley2\Desktop\fostercare_main.dta", replace
+use FC2005v5.dta
+sort recnumbr fipscode repdatyr
+merge recnumbr fipscode repdatyr using "C:\Users\bearley2\Desktop\fostercare_main.dta"
+drop _merge
+sort recnumbr fipscode repdatyr
+save "C:\Users\bearley2\Desktop\fostercare_main.dta", replace
+use FC2006v5.dta
+sort recnumbr fipscode repdatyr
+merge recnumbr fipscode repdatyr using "C:\Users\bearley2\Desktop\fostercare_main.dta"
+drop _merge
+sort recnumbr fipscode repdatyr
+save "C:\Users\bearley2\Desktop\fostercare_main.dta", replace
+use FC2007v5.dta
+sort recnumbr fipscode repdatyr
+merge recnumbr fipscode repdatyr using "C:\Users\bearley2\Desktop\fostercare_main.dta"
+drop _merge
+sort recnumbr fipscode repdatyr
+save "C:\Users\bearley2\Desktop\fostercare_main.dta", replace
+use FC2008v6.dta
+sort recnumbr fipscode repdatyr
+merge recnumbr fipscode repdatyr using "C:\Users\bearley2\Desktop\fostercare_main.dta"
+drop _merge
+sort recnumbr fipscode repdatyr
+save "C:\Users\bearley2\Desktop\fostercare_main.dta", replace
+use FC2009v5.dta
+sort recnumbr fipscode repdatyr
+merge recnumbr fipscode repdatyr using "C:\Users\bearley2\Desktop\fostercare_main.dta"
+drop _merge
+sort recnumbr fipscode repdatyr
+save "C:\Users\bearley2\Desktop\fostercare_main.dta", replace
+use FC2010v6.dta
+sort recnumbr fipscode repdatyr
+merge recnumbr fipscode repdatyr using "C:\Users\bearley2\Desktop\fostercare_main.dta"
+drop _merge
+sort recnumbr fipscode repdatyr
+save "C:\Users\bearley2\Desktop\fostercare_main.dta", replace
+use FC2011v6.dta
+sort recnumbr fipscode repdatyr
+merge recnumbr fipscode repdatyr using "C:\Users\bearley2\Desktop\fostercare_main.dta"
+drop _merge
+sort recnumbr fipscode repdatyr
+save "C:\Users\bearley2\Desktop\fostercare_main.dta", replace
+use FC2012v7.dta
+sort recnumbr fipscode repdatyr
+merge recnumbr fipscode repdatyr using "C:\Users\bearley2\Desktop\fostercare_main.dta"
+drop _merge
+sort recnumbr fipscode repdatyr
+save "C:\Users\bearley2\Desktop\fostercare_main.dta", replace
+use FC2013v7.dta
+sort recnumbr fipscode repdatyr
+merge recnumbr fipscode repdatyr using "C:\Users\bearley2\Desktop\fostercare_main.dta"
+drop _merge
+sort recnumbr fipscode repdatyr
+save "C:\Users\bearley2\Desktop\fostercare_main.dta", replace
+use FC2014v7.dta
+sort recnumbr fipscode repdatyr
+merge recnumbr fipscode repdatyr using "C:\Users\bearley2\Desktop\fostercare_main.dta"
+drop _merge
+sort recnumbr fipscode repdatyr
+save "C:\Users\bearley2\Desktop\fostercare_main.dta", replace
+use FC2015v8.dta
+sort recnumbr fipscode repdatyr
+merge recnumbr fipscode repdatyr using "C:\Users\bearley2\Desktop\fostercare_main.dta"
+drop _merge
+sort recnumbr fipscode repdatyr
+save "C:\Users\bearley2\Desktop\fostercare_main.dta", replace
+use FC2016v6.dta
+sort recnumbr fipscode repdatyr
+merge recnumbr fipscode repdatyr using "C:\Users\bearley2\Desktop\fostercare_main.dta"
+drop _merge
+sort recnumbr fipscode repdatyr
+save "C:\Users\bearley2\Desktop\fostercare_main.dta", replace
+use FC2017v5.dta
+sort recnumbr fipscode repdatyr
+merge recnumbr fipscode repdatyr using "C:\Users\bearley2\Desktop\fostercare_main.dta"
+drop _merge
+sort recnumbr fipscode repdatyr
+save "C:\Users\bearley2\Desktop\fostercare_main.dta", replace
+use FC2018v3.dta
+sort recnumbr fipscode repdatyr
+merge recnumbr fipscode repdatyr using "C:\Users\bearley2\Desktop\fostercare_main.dta"
+drop _merge
+sort recnumbr fipscode repdatyr
+save "C:\Users\bearley2\Desktop\fostercare_main.dta", replace
+use FC2019v2.dta
+sort recnumbr fipscode repdatyr
+merge recnumbr fipscode repdatyr using "C:\Users\bearley2\Desktop\fostercare_main.dta"
+drop _merge
+sort recnumbr fipscode repdatyr
+save "C:\Users\bearley2\Desktop\fostercare_main.dta", replace
+use FC2020v1.dta
+sort recnumbr fipscode repdatyr
+merge recnumbr fipscode repdatyr using "C:\Users\bearley2\Desktop\fostercare_main.dta"
+drop _merge
+sort recnumbr fipscode repdatyr
+save "C:\Users\bearley2\Desktop\fostercare_main.dta", replace
+
+
+*****Notes from AFCARS Statistician Emails*********
+*Q: The "iswaiting" variable that indicates a child is waiting for adoption represents the current pool of potential adoptive children for that year? In other words, the children who are discharged for adoption in that year are not included in the count for that pool? 
+*A: Correct. Children who are discharged to Adoption (Exited=1; DisReasn=3; InAtEnd=0) are not included in the pool of children waiting for adoption (IsWaiting=1, Exited=0; InatEnd=1). 
+
+******the following code is a bit of a sidetrack for identifying which counties have all years of data. It is not necessary to run.*****
+*clear
+*use fostercare_main.dta
+**county population data (based on which counties have all 21 years of data)
+*forvalues i=2000(1)2020 {
+*	gen county_`i'=1 if repdatyr==`i'
+*}
+
+*collapse county_2000 county_2001 county_2002 county_2003 county_2004 county_2005 county_2006 county_2007 county_2008 county_2009 county_2010 county_2011 county_2012 county_2013 county_2014 county_2015 county_2016 county_2017 county_2018 county_2019 county_2020, by(fipscode)
+
+*egen county_total= rowtotal(county_2000 county_2001 county_2002 county_2003 county_2004 county_2005 county_2006 county_2007 county_2008 county_2009 county_2010 county_2011 county_2012 county_2013 county_2014 county_2015 county_2016 county_2017 county_2018 county_2019 county_2020)
+
+*tab fipscode if county_total==21
+
+**In the end, there should be 82 counties
+
+*identifying instances where disreasn==3 and exit==0 or in_at_end==1 or is_waiting==1 and understanding why those occur
+
+*there is total overlap between the instances where weird_is_waiting and weird_in_at_end. Weird_exit occurs the most, but still relatively small number of instances (~8,000 out of ~480,000) Not sure why this occurs but probably just imperfect data. I will use what the statisticians use
+
+clear
+use fostercare_main.dta
+
+*cleaning up variables that change their names in the AFCARS data depending on the year
+egen exit= rowtotal(Exited exited)
+replace exit=1 if exit==2
+label define YN 0 "No" 1 "Yes"
+label values exit YN
+
+egen in_at_end= rowtotal(InAtEnd inatend)
+replace in_at_end=1 if in_at_end==2
+label values in_at_end YN
+
+egen is_waiting= rowtotal(iswaiting IsWaiting)
+replace is_waiting=1 if is_waiting==2
+label values is_waiting YN
+
+*creating year month time variable. "If a child is in FC the entire year, the data provided in the file is from the most recent submission, i.e. September. Children with a March RepDatMo are kids who were discharged from FC prior to April 1, so they would not be in the September census. So even though both submissions are for every child in FC, the combined annual file has a Sep RepDatMo for kids who were in care the entire year, or were in during the Apr 1 - Sep 30 period. The March RepDatMo is only for kids who were in care Oct 1 - March 31, but not after March 31." (email from Michael Dineen at AFCARS)
+
+gen year_month= ym(repdatyr, repdatmo)
+
+label define ym 482 "March 2000" 488 "September 2000" 494 "March 2001" 500 "September 2001" 506 "March 2002" 512 "September 2002" 518 "March 2003" 524 "September 2003" 530 "March 2004" 536 "September 2004" 542 "March 2005" 548 "September 2005" 554 "March 2006" 560 "September 2006" 566 "March 2007" 572 "September 2007" 578 "March 2008" 584 "September 2008" 590 "March 2009" 596 "September 2009" 602 "March 2010" 608 "September 2010" 614 "March 2011" 620 "September 2011" 626 "March 2012" 632 "September 2012"638 "March 2013" 644 "September 2013" 650 "March 2014" 656 "September 2014" 662 "March 2015" 668 "September 2015" 674 "March 2016" 680 "September 2016" 686 "March 2017" 692 "September 2017" 698 "March 2018" 704 "September 2018" 710 "March 2019" 716 "September 2019" 722 "March 2020" 728 "September 2020"
+
+label values year_month ym
+
+*creating dependent variable
+gen adopt=.
+replace adopt=1 if disreasn==3 & in_at_end==0 & exit==1
+replace adopt=0 if disreasn!=3 | in_at_end!=0 | exit!=1
+*To provide the total number of foster children who are in the adoptive pool, you will need to combine to variables that are named slightly differently but represent that a child is waiting for adoption.
+gen adopt_wait=.
+replace adopt_wait=1 if is_waiting==1 & in_at_end==1 & exit==0
+replace adopt_wait=0 if is_waiting!=1 | in_at_end!=1 | exit!=0
+*aggregating to the county level. "If a child is in FC the entire year, the data provided in the file is from the most recent submission, i.e. September. Children with a March RepDatMo are kids who were discharged from FC prior to April 1, so they would not be in the September census. So even though both submissions are for every child in FC, the combined annual file has a Sep RepDatMo for kids who were in care the entire year, or were in during the Apr 1 - Sep 30 period. The March RepDatMo is only for kids who were in care Oct 1 - March 31, but not after March 31." (email from Michael Dineen at AFCARS) This means that the adopt total for each county will change every six months, but those waiting for adoption is only reported in September and thus the adoption pool should be based on both March and September data.
+egen adopt_wait_year=total(adopt_wait), by(fipscode repdatyr)
+egen adopt_county=total(adopt), by(fipscode repdatyr)
+gen adopt_pool=adopt_county + adopt_wait_year
+*you can now generate a variable that calculates the percentage of adoptions from the adoption pool. This is useful for normalizing adoptions across states based on the potential adoption pool from which to draw upon
+gen norm_adopt= adopt_county/adopt_pool
+
+*note that there are 39 instances where observations are missing. This is because the adoption pool is 0, so you cannot return a number when calculating norm_adopt. This impacts Allen County, IN (2003); Fulton County, GA (2016 and 2020); District of Columbia (2020); and San Francisco (2020)
+
+
+*The variable iveaa represents a subsidy paid to parents who care for a child in a pre-adoptive home for six months required before adopting.
+egen subsidy= rowtotal(fcmntpay FCMntPay)
+replace subsidy= subsidy/2 if fcmntpay!=. & FCMntPay!=.
+replace subsidy= 0 if fcmntpay==0 & FCMntPay==0
+replace subsidy= fcmntpay if fcmntpay!=. & FCMntPay==0
+replace subsidy= FCMntPay if fcmntpay==0 & FCMntPay!=.
+egen county_sub=median(subsidy) if is_waiting==1 | adopt==1 , by(fipscode repdatyr)
+*include and clean variable for foster child age in the state. Age at the start of each fiscal year has two variables across the 21 years of data. As shown below, sometimes there are observations (about 1 percent) that have AgeAtStart and ageatstart with a code. When this happened and the ages were different, they were averaged and rounded up (all averaged ages were only separated by one year). Additionally, any age at start reported as -1 were rounded up to 0. Finally, only ages under 19 were kept in the data (since aging out technically occurs once children become adults). This removed 0 observations.
+egen fost_age=rowtotal(AgeAtStart ageatstart)
+replace fost_age=fost_age/2 if AgeAtStart==ageatstart
+gen extra=1 if AgeAtStart!=. & ageatstart!=.
+replace fost_age=fost_age/2 if extra==1
+gen round=round(fost_age)
+replace round=0 if round==-1
+drop if round >18
+drop fost_age
+egen fost_age=mean(round) if is_waiting==1 | adopt==1, by(fipscode repdatyr)
+
+*Finally, we want to limit our analysis to 2000 to 2020 without Puerto Rico.
+drop if repdatyr==2021 | repdatyr==1998 | repdatyr==1999 | repdatyr==2020
+drop if year_month>716
+drop if state==72
+save "C:\Users\bearley2\Desktop\fostercare_county.dta", replace
+
+
+
+
+clear
+use fostercare_county.dta
+*CAUSAL COUNTY LEVEL ANALYSIS. Note that fipscode represents the county (or county equivalent) where the agency is located and not the location where the child comes from. Therefore, the agency represented by the fipscode may be helping children from outside their county.
+label define fips_num 1073 "Jefferson County, AL" 4013 "Maricopa County, AZ" 4019 "Pima County, AZ" 6001 "Alameda County, CA" 6013 "Contra Costa County, CA" 6019 "Fresno County, CA" 6029 "Kern County, CA" 6037 "Los Angeles County, CA" 6059 "Orange County, CA" 6065 "Riverside County, CA" 6067 "Sacramento County, CA" 6071 "San Bernardino County, CA" 6073 "San Diego County, CA" 6075 "San Francisco County, CA" 6077 "San Joaquin County, CA" 6085 "Santa Clara County, CA" 6107 "Tulare County, CA" 8031 "Denver County, CO" 8041 "El Paso County, CO" 9003 "Hartford County, CT" 9009 "New Haven County, CT" 11001 "District of Columbia" 12011 "Broward County, FL" 12031 "Duval County, FL" 12057 "Hillsborough County, FL" 12086 "Miami-Dade County, FL" 12095 "Orange County, FL" 12099 "Palm Beach County, FL" 12103 "Pinellas County, FL" 12105 "Polk County, FL" 12127 "Volusia County, FL" 13121 "Fulton County, GA" 15003 "Honolulu County, HI" 17031 "Cook County, IL" 17143 "Peoria County, IL" 18003 "Allen County, IN" 18089 "Lake County, IN" 18097 "Marion County, IN" 19153 "Polk County, IA" 20173 "Sedgwick County, KS" 21111 "Jefferson County, KY" 24510 "Baltimore County, MD" 25005 "Bristol County, MA" 25009 "Essex County, MA" 25013 "Hampden County, MA" 25017 "Middlesex County, MA" 25025 "Suffolk County, MA" 25027 "Worcester County, MA" 26081 "Kent County, MI" 26163 "Wayne County, MI" 27053 "Hennepin County, MN" 27123 "Ramsey County, MN" 29095 "Jackson County, MO" 29189 "St. Louis County, MO" 31055 "Douglas County, NE" 34007 "Camden County, NJ" 34013 "Essex County, NJ" 36029 "Erie County, NY" 36061 "New York County, NY" 39035 "Cuyahoga County, OH" 39049 "Franklin County, OH" 39061 "Hamilton County, OH" 39153 "Summit County, OH" 40109 "Oklahoma County, OK" 40143 "Tulsa County, OK" 41039 "Lane County, OR" 41051 "Multnomah County, OR" 42003 "Allegheny County, PA" 42101 "Philadelphia County, PA" 44007 "Providence County, RI" 47157 "Shelby County, TN" 48029 "Bexar County, TX" 48113 "Dallas County, TX" 48201 "Harris County, TX" 48439 "Tarrant County, TX" 48453 "Travis County, TX" 49035 "Salt Lake County, UT" 53033 "King County, WA" 53053 "Pierce County, WA" 53061 "Snohomish County, WA" 53063 "Spokane County, WA" 55079 "Milwaukee County, WI"
+
+
+keep if fipscode==1073 | fipscode==4013 | fipscode==4019 | fipscode==6001 | fipscode==6013 | fipscode==6019 | fipscode==6029 | fipscode==6037 | fipscode==6059 | fipscode==6065 | fipscode==6067 | fipscode==6071 | fipscode==6073 | fipscode==6075 | fipscode==6077 | fipscode==6085 | fipscode==6107 | fipscode==8031 | fipscode==8041 | fipscode==9003 | fipscode==9009 | fipscode==11001 | fipscode==12011 | fipscode==12031 | fipscode==12057 | fipscode==12086 | fipscode==12095 | fipscode==12099 | fipscode==12103 | fipscode==12105 | fipscode==12127 | fipscode==13121 | fipscode==15003 | fipscode==17031 | fipscode==17143 | fipscode==18003 | fipscode==18089 | fipscode==18097 | fipscode==19153 | fipscode==20173 | fipscode==21111 | fipscode==24510 | fipscode==25005 | fipscode==25009 | fipscode==25013 | fipscode==25017 | fipscode==25025 | fipscode==25027 | fipscode==26081 | fipscode==26163 | fipscode==27053 | fipscode==27123 | fipscode==29095 | fipscode==29189 | fipscode==31055 | fipscode==34007 | fipscode==34013 | fipscode==36029 | fipscode==36061 | fipscode==39035 | fipscode==39049 | fipscode==39061 | fipscode==39153 | fipscode==40109 | fipscode==40143 | fipscode==41039 | fipscode==41051 | fipscode==42003 | fipscode==42101 | fipscode==44007 | fipscode==47157 | fipscode==48029 | fipscode==48113 | fipscode==48201 | fipscode==48439 | fipscode==48453 | fipscode==49035 | fipscode==53033 | fipscode==53053 | fipscode==53061 | fipscode==53063 | fipscode==55079
+
+label values fipscode fips_num
+
+sort fipscode repdatyr
+
+merge fipscode repdatyr using county_pop.dta
+
+sort repdatyr
+
+by repdatyr: gen adopt_pop= (adopt_county/county_pop)*100000
+
+by repdatyr: gen wait_pop= (adopt_wait_year/county_pop)*100000
+
+collapse norm_adopt adopt_wait_year adopt_county adopt_pool adopt_pop wait_pop fost_age county_sub, by(fipscode repdatyr)
+
+sort fipscode repdatyr
+
+drop if repdatyr==.
+
+*removes 2020. This data seemed to be either incomplete or impacted by COVID-19.
+drop if norm_adopt==.
+
+*removes all counties that are not in a peer group for Worcester, Suffolk, Bristol, Hampden, Essex, or Middlesex Counties
+drop if fipscode==6075 | fipscode==11001 | fipscode==42101 | fipscode==18003 | fipscode==12127 | fipscode==17031 | fipscode==13121 | fipscode==20173 | fipscode==4013 | fipscode==6001 | fipscode==6059 | fipscode==6073 | fipscode==6085 | fipscode==8031 | fipscode==9003 | fipscode==12103 | fipscode==12105 | fipscode==17143 | fipscode==19153 | fipscode==20173 | fipscode==21111 | fipscode==26081 | fipscode==27053 | fipscode==27123 | fipscode==29095 | fipscode==31055 | fipscode==36029 | fipscode==39049 | fipscode==39153 | fipscode==40109 | fipscode==40143 | fipscode==41039 | fipscode==41051 | fipscode==42003 | fipscode==48029 | fipscode==48439 | fipscode==48453 | fipscode==49035 | fipscode==53033 | fipscode==25013 | fipscode==6019 | fipscode==6029 | fipscode==6077 | fipscode==6107
+
+
+*Dependent Variable: normalized adoption rate by county for each year (2000 to 2019)
+*Treatment variable: Suffolk County Massachusetts received the treatment (i.e., closure of CCB) once its contract with the state expired on June 30, 2006.
+gen treat=1 if fipscode==25025 | fipscode==25005 | fipscode==25009 | fipscode==25017 | fipscode==25027
+replace treat=0 if fipscode!=25025 & fipscode!=25005 & fipscode!=25009 & fipscode!=25013 & fipscode!=25017 & fipscode!=25027
+
+*creating DiD estimators
+gen post=1 if repdatyr>=2006
+replace post=0 if repdaty<2006
+gen treat_post=treat*post
+sort repdatyr
+
+reg norm_adopt treat_post treat post 
+reg norm_adopt treat_post treat post fost_age
+reg norm_adopt treat_post treat post fost_age county_sub
+reg norm_adopt treat_post treat post fost_age county_sub i.repdatyr
+reg norm_adopt treat_post treat post fost_age county_sub i.repdatyr i.fipscode
+
+eststo norm_1: reg norm_adopt treat_post treat post 
+estadd ysumm, replace
+gen ma_norm=norm_adopt if fipscode==25025 | fipscode==25005 | fipscode==25009 | fipscode==25017 | fipscode==25027
+sum ma_norm if post==0
+estadd scalar Mean = r(mean), replace
+eststo norm_2: reg norm_adopt treat_post treat post fost_age
+sum ma_norm if post==0
+estadd scalar Mean = r(mean), replace
+eststo norm_3: reg norm_adopt treat_post treat post fost_age county_sub
+sum ma_norm if post==0
+estadd scalar Mean = r(mean), replace
+eststo norm_4: reg norm_adopt treat_post treat post fost_age county_sub i.repdatyr
+sum ma_norm if post==0
+estadd scalar Mean = r(mean), replace
+eststo norm_5: reg norm_adopt treat_post treat post fost_age county_sub i.repdatyr i.fipscode
+sum ma_norm if post==0
+estadd scalar Mean = r(mean), replace
+
+esttab norm_1 norm_2 norm_3 norm_4 norm_5 using did_norm.tex, indicate("Foster Child Age = *fost_age" "County Subsidy = *county_sub" "Time FE = *.repdatyr" "County FE = *.fipscode") mtitle("Adopt Rate" "Adopt Rate" "Adopt Rate" "Adopt Rate" "Adopt Rate") drop(_cons) label title(Normalized Adoption Rate) stats(N Mean, label("Total Observations" "MA Norm Adopt Mean")) replace
+
+**SDID. For more information about the synthetic difference-in-differences approach, please review See Dmitry Arkhangelsky, Susan Athey, David A. Hirshberg, Guido W. Imbens, & Stefan Wager, Synthetic Difference-in-Differences, 111 AM. ECON. REV. 4088 (2021).
+sdid norm_adopt fipscode repdatyr treat_post, vce(placebo) reps(100) seed(920) graph 
+sdid norm_adopt fipscode repdaty treat_post, vce(placebo) reps(100) seed(920) covariates(fost_age county_sub) graph g1on g1_opt(xtitle("") ylabel(-0.2(.05)0.2) scheme(plotplainblind)) 
+     g2_opt(ylabel(-0.2(0.05)0.2) xlabel(2000(5)2020) ytitle("Percentage of Foster Children Adopted") 
+            xtitle("") text(125 1995 "ATT = -0.03204" " SE = (0.01784)") scheme(plotplainblind))
+    graph_export(sdid_covar, .png)
+eststo sdid_base: sdid norm_adopt fipscode repdatyr treat_post, vce(placebo) reps(100) seed(920)
+eststo sdid_covar: sdid norm_adopt fipscode repdaty treat_post, vce(placebo) reps(100) seed(920) covariates(fost_age county_sub)
+
+esttab sdid_base sdid_covar using sdid_norm.tex, starlevel ("*" 0.10 "**" 0.05 "***" 0.01) b(%-9.3f) se(%-9.3f) replace
+
+
+
